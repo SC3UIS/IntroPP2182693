@@ -45,3 +45,10 @@ int main(int argc, char** argv)
     return 0;
 }
 
+/*In this version, we have added the necessary MPI calls to initialize the MPI environment, obtain the rank and size of the communicator, and synchronize the value of num across all processes using MPI_Bcast.
+
+Then, we calculate the range of values to sum based on the process rank and the total size. Each process adds up its assigned range.
+
+Finally, we use MPI_Reduce to sum all the partial sum values and obtain the final result in process 0. The final result is printed only in process 0 after the reduction.
+
+Please note that to compile and execute this code, you need to have a compatible MPI library installed and use the appropriate compilation commands.
